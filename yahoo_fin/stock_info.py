@@ -174,8 +174,20 @@ def tickers_dow():
 
     dow_tickers = sorted(table['Symbol'].tolist())
     
-    return dow_tickers    
-    
+    return dow_tickers
+
+
+def tickers_ftsemib():
+    '''Downloads list of currently traded tickers on the FTSE MIB Italian index'''
+
+    site = "https://finance.yahoo.com/quote/FTSEMIB.MI/components?p=FTSEMIB.MI"
+
+    table = pd.read_html(site)[0]
+
+    dow_tickers = sorted(table['Symbol'].tolist())
+
+    return dow_tickers
+
 
 def get_quote_table(ticker , dict_result = True): 
     
