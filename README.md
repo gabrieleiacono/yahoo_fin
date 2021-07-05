@@ -3,21 +3,16 @@ Scrape stock price history from new (Spring 2017) Yahoo Finance layout
 
 Full documentation is available on my website, here: http://theautomatic.net/yahoo_fin-documentation/.
 
-If you're familiar with the "get_data_yahoo" method in pandas.io.data, this package's main purpose is to serve as an updated replacement
-based off Yahoo Finance's recent change in layout and its API (Spring 2017).  Also, yahoo_fin provides functionality to scrape the current stocks comprising the S&P 500, NASDAQ, Dow Jones, and NYSE.
+If you're familiar with the "get_data_yahoo" method in pandas.io.data, this package's initial purpose was to serve as an updated replacement
+based off Yahoo Finance's change in layout and its API (Spring 2017).  Since then, the package has been developed to scrape stock fundamentals data, ticker symbols from popular exchanges, (including S&P 500, NASDAQ, Dow Jones, and NYSE), balance sheets, income statements, cash flows, data on holders and analysts, and additional data such as beta / dividend information / 1 yr est. etc.  Additionally, it contains a module for scraping options data.
 
-Yahoo_fin also includes functionality to scrape fundamentals information, income statements, cash flows, data on holders and analysts, and additional data such as beta / dividend information / 1 yr est. etc.
-
-All of the functions in the package are contained in a single module, stock_info.  
+The package contains two modules: stock_info and options.
 
 Download using pip:
 
 ```batch
 pip install yahoo_fin
 ```
-
-yahoo_fin contains one module, "stock_info."  The main function within stock_info is "get_data."  This function takes a ticker symbol as input (e.g. "nflx"), and outputs a data frame containing open, close, high, low, adjusted close, and volume information.  
-
 
 Examples:
 
@@ -30,7 +25,7 @@ nflx = get_data("NFLX")
 """ pull data for Apple (AAPL) """
 """case sensitivity does not matter"""
 aapl = get_data("aapl")
-
+In
 """ get list of all stocks currently traded
     on NASDAQ exchange """
 nasdaq_ticker_list = tickers_nasdaq()
@@ -45,3 +40,17 @@ other_tickers = tickers_other()
 info = get_quote_table("amzn")
 
 ```
+
+For more in-depth tutorials on yahoo_fin, check out the following links:
+
+* Introduction & Getting historical stock prices: http://theautomatic.net/2018/01/25/coding-yahoo_fin-package/
+
+* Getting stock fundamentals data: http://theautomatic.net/2020/05/05/how-to-download-fundamentals-data-with-python/
+
+* Retrieving real-time stock prices: http://theautomatic.net/2018/07/31/how-to-get-live-stock-prices-with-python/
+
+* Getting options chains: http://theautomatic.net/2019/04/17/how-to-get-options-data-with-python/
+
+* YouTube playlist on collecting stock data: https://www.youtube.com/playlist?list=PL1EfVfbD6djHHxTzicLzdX5jzH0wEgDs7
+
+
